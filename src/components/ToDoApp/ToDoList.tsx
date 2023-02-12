@@ -1,9 +1,9 @@
 import { FormEvent } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { Categories, todoSelector, toDoState } from "../atoms";
+import { Categories, todoSelector, toDoState } from "../../atoms";
 import CreateToDo from "./CreateToDo";
 import ToDo from "./ToDo";
-import { categoryState } from "./../atoms";
+import { categoryState } from "../../atoms";
 
 const ToDoList = () => {
   // const todos = useRecoilValue(toDoState);
@@ -59,7 +59,6 @@ const ToDoList = () => {
           <ToDo key={todo.id} {...todo} />
         ))}
       </ul> */}
-      <hr />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import ToDoList from "./components/ToDoList";
+import ToDoList from "./components/ToDoApp/ToDoList";
+import TimeConverter from "./components/TimeConverter/TimeConverter";
 
 const GlobalStyle = createGlobalStyle`
  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
@@ -69,6 +70,8 @@ function App() {
     <>
       <GlobalStyle />
       <ToDoList />
+      <hr />
+      <TimeConverter />
     </>
   );
 }

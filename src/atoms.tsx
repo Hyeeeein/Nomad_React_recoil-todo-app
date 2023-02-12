@@ -1,5 +1,6 @@
 import { atom, selector } from "recoil";
 
+/* ToDoApp */
 type categories = "TO_DO" | "DOING" | "DONE";
 
 // 열거가능한 클래스 : enum 은 기본적으로 숫자로 만들어짐, 그래서 (enum member) Categories["TO_DO"] = 0 표시
@@ -33,5 +34,23 @@ export const todoSelector = selector({
     const todos = get(toDoState);
     const category = get(categoryState);
     return todos.filter((todo) => todo.category === category);
+  },
+});
+
+/* TimeConverter */
+export const minuteState = atom({
+  key: "minutes",
+  default: 0,
+});
+
+export const hourSelector = selector<number>({
+  key: "hour",
+  get: ({ get }) => {
+    const minutes = get(minuteState);
+    return minutes / 60;
+  },
+  set: ({ set }, newValue) => {
+    const minutes = Number(newValue) * 60;
+    set(minuteState, minutes);
   },
 });

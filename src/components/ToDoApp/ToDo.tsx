@@ -1,5 +1,5 @@
 import React from "react";
-import { Categories, ITodo, toDoState } from "./../atoms";
+import { Categories, ITodo, toDoState } from "../../atoms";
 import { useSetRecoilState } from "recoil";
 
 const ToDo = ({ text, category, id }: ITodo) => {
